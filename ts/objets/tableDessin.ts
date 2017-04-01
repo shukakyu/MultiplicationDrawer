@@ -29,6 +29,16 @@ class TableDessin
 		$(this.id).attr("height", this.hauteur);
 	}
 
+	get Largeur(): number
+	{
+		return this.largeur;
+	}
+
+	get Hauteur(): number
+	{
+		return this.hauteur;
+	}
+
     /**
 	 * Permet d'ajouter une forme au dessin
 	 * @param La nouvelle forme à dessiner
