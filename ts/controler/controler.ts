@@ -15,7 +15,7 @@ class Controler {
 	 * de sorte à associer un chiffre à un Point.
 	 * Ca facilite le tracé pour le developpeur :)
 	 */
-	private listePoints: Point[] = [];
+	private listePoints: Point[];
 
 	set NbPoint(value: number) {
 		this.nbPoint = value;
@@ -54,7 +54,7 @@ class Controler {
 			this.vue.AjouterForme(forme);
 	}
 
-	AjouterFormeAvecDelai(forme: IDessinable)
+	AjouterFormeAvecDelais(forme: IDessinable)
 	{
 		setTimeout(() =>{
 			this.AjouterForme(forme);
@@ -62,6 +62,7 @@ class Controler {
 	}
 
 	genererPoint() {
+        this.listePoints = [];
 		for (let i: number = 0; i < this.NbPoint; i++) {
 			let x: number = Math.floor(this.cercle.Centre["x"] + this.cercle.Rayon * Math.sin(2 * Math.PI / this.NbPoint * i));
 			let y: number = Math.floor(this.cercle.Centre["y"] + this.cercle.Rayon * -1 * Math.cos(2 * Math.PI / this.NbPoint * i));
@@ -84,7 +85,7 @@ class Controler {
 
             //création de la droite
 			let ligne: Ligne = new Ligne(this.vue.Dessin, x, y, x2, y2);
-			this.AjouterFormeAvecDelai(ligne);
+			this.AjouterFormeAvecDelais(ligne);
 		}
 
 
