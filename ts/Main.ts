@@ -14,7 +14,7 @@ $(window)
 
     for(let i: number = 0; i < iteration; i++)
     {
-      let x:number = Math.floor(cercle.Centre["x"] + cercle.Rayon * -1 *Math.sin(2*Math.PI/iteration*i));
+      let x:number = Math.floor(cercle.Centre["x"] + cercle.Rayon * Math.sin(2*Math.PI/iteration*i));
       let y: number = Math.floor(cercle.Centre["y"] + cercle.Rayon * -1 *Math.cos(2*Math.PI/iteration*i));
       let point: Point = new Point(x, y);
       listePoint.push(point);
