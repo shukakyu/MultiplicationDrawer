@@ -1,0 +1,4 @@
+interface IDessinable
+{
+	dessiner();
+}
