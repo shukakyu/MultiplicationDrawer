@@ -20,7 +20,7 @@ class Ligne implements IDessinable
 	{
 		$(this.dessin.NomDessin).drawLine({
 			strokeStyle: '#000',
-			strokeWidth: 10,
+			strokeWidth: 1,
 			x1: this.x,
 			y1: this.y,
 			x2: this.x2,
