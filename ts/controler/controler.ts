@@ -6,4 +6,9 @@ class Controler
 	{
 
 	}
+
+	AjouterForme(forme : IDessinable) : void
+	{
+		this.vue.AjouterForme(forme);
+	}
 }
