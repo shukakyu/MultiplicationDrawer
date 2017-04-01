@@ -51,7 +51,14 @@ class Controler {
 	}
 
 	AjouterForme(forme: IDessinable): void {
-		this.vue.AjouterForme(forme);
+			this.vue.AjouterForme(forme);
+	}
+
+	AjouterFormeAvecDelai(forme: IDessinable)
+	{
+		setTimeout(() =>{
+			this.AjouterForme(forme);
+		}, 1000)
 	}
 
 	genererPoint() {
@@ -68,16 +75,16 @@ class Controler {
 			let point1: Point = this.listePoints[i]
 			let point2: Point = this.listePoints[(i * 2) % this.NbPoint];
 
+			//Coordonnées des deux points de la droite
 			let x: number = point1.X;
 			let y: number = point1.Y;
 
 			let x2: number = point2.X;
 			let y2: number = point2.Y;
 
+            //création de la droite
 			let ligne: Ligne = new Ligne(this.vue.Dessin, x, y, x2, y2);
-			setTimeout(() => {
-				this.AjouterForme(ligne);
-			}, 1000);
+			this.AjouterFormeAvecDelai(ligne);
 		}
 
 
