@@ -10,6 +10,7 @@ class Cercle implements IDessinable
 	constructor(private dessin: TableDessin, private diametre: number, private x: number, private y: number)
 	{
 	}
+
 	dessiner(): void
 	{
 		$(this.dessin.NomDessin).drawEllipse({
@@ -33,5 +34,22 @@ class Cercle implements IDessinable
         coordonnees["x"] =this.x;
 		return coordonnees;
 	}
+
+	get Diametre() : number
+	{
+		return this.diametre;
+	}
+
+	get Rayon() : number
+	{
+		return Math.floor(this.Diametre/2);
+	}
+
+	get Perimetre() : number
+	{
+		let res: number = this.Diametre*Math.PI;
+		return Math.round(res);
+	}
+
 
 }
