@@ -1,9 +1,15 @@
 class Cercle implements IDessinable
 {
-	constructor(private dessin: TableDessin, private rayon: number, private x: number, private y: number)
+    /**
+	 * 
+	 * @param dessin Permet de dessiner un cercle
+	 * @param diametre le diametre du cercle
+	 * @param x la position en y
+	 * @param y la position en y
+	 */
+	constructor(private dessin: TableDessin, private diametre: number, private x: number, private y: number)
 	{
 	}
-
 	dessiner(): void
 	{
 		$(this.dessin.NomDessin).drawEllipse({
@@ -11,16 +17,19 @@ class Cercle implements IDessinable
 			strokeWitdh: 5,
 			x : this.x,
 			y : this.y,
-			width: this.rayon,
-			height: this.rayon
+			width: this.diametre,
+			height: this.diametre
 		});
 	}
 
-	//Retourne le centre du cercle sous forme de tableau
-	get Centre() : [string, number]
+    /**
+	 * Retourne le centre du cercle sous la forme d'un tableau
+	 * indexé avec x et y
+	 */
+	get Centre() : number[]
 	{
-		let coordonnees:[string, number] =[];
-        coordonnees["y"] =this.y;
+		let coordonnees: number[] = [];
+        coordonnees ["y"] =this.y;
         coordonnees["x"] =this.x;
 		return coordonnees;
 	}

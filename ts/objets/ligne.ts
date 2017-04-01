@@ -2,6 +2,14 @@
 
 class Ligne implements IDessinable
 {
+    /**
+	 * 
+	 * @param dessin Permet de construire une ligne
+	 * @param x la coordonnée x de départ
+	 * @param y la coordonnée y de départ
+	 * @param x2 la coordonée x de fin
+	 * @param y2 la coordonnée y de fin
+	 */
 	constructor(private dessin: TableDessin, private x: number, private y: number,
 	private x2: number, private y2: number)
 	{
