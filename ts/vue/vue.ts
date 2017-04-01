@@ -6,11 +6,26 @@ class Vue
 	 */
 	constructor (private dessin: TableDessin)
 	{
-		
+
 	}
 
 	AjouterForme(forme: IDessinable) : void
 	{
 		forme.dessiner();
+	}
+
+	get Dessin() : TableDessin
+	{
+		return this.dessin;
+	}
+
+	get Largeur(): number
+	{
+		return this.Dessin.Largeur;
+	}
+
+	get Hauteur(): number
+	{
+		return this.Dessin.Hauteur;
 	}
 }
