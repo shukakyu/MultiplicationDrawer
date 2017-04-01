@@ -33,8 +33,21 @@ class Controler {
 		this.AjouterForme(cercle);
 	}
 
+	initEvenement() : void
+	{
+		$('#valider').click(() => {
+            this.vue.Nettoyer();
+			this.initCercle();
+			let nb: number = $('#nbPoints').val();
+			this.NbPoint = nb;
+			this.genererPoint();
+			this.tracerDroites();
+		})
+	}
+
 	constructor(private vue: Vue) {
 		this.initCercle();
+		this.initEvenement();
 	}
 
 	AjouterForme(forme: IDessinable): void {
@@ -51,7 +64,6 @@ class Controler {
 	}
 
 	tracerDroites() {
-		this.genererPoint();
 		for (let i: number = 0; i < this.NbPoint; i++) {
 			let point1: Point = this.listePoints[i]
 			let point2: Point = this.listePoints[(i * 2) % this.NbPoint];

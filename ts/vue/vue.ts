@@ -28,4 +28,9 @@ class Vue
 	{
 		return this.Dessin.Hauteur;
 	}
+
+	Nettoyer()
+	{
+		$(this.Dessin.NomDessin).clearCanvas();
+	}
 }
