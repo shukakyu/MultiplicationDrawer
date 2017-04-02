@@ -4,6 +4,21 @@ class Controler {
 
 	private nbPoint: number;
 
+
+	public get Table(): number {
+		return this.table;
+	}
+
+	public set Table(value: number) {
+		this.table = value;
+	}
+
+
+    /**
+	 * La table de multiplication concernée par le dessin
+	 */
+	private table: number;
+
     /**
 	 * On garde le cercle dans une variable pour pouvoir
 	 * accéder facilement à ses caractèristiques
@@ -39,7 +54,9 @@ class Controler {
             this.vue.Nettoyer();
 			this.initCercle();
 			let nb: number = $('#nbPoints').val();
+			let table: number = $('#table').val();
 			this.NbPoint = nb;
+			this.Table = table;
 			this.genererPoint();
 			this.tracerDroites();
 		})
@@ -74,7 +91,7 @@ class Controler {
 	tracerDroites() {
 		for (let i: number = 0; i < this.NbPoint; i++) {
 			let point1: Point = this.listePoints[i]
-			let point2: Point = this.listePoints[(i * 2) % this.NbPoint];
+			let point2: Point = this.listePoints[(i * this.Table) % this.NbPoint];
 
 			//Coordonnées des deux points de la droite
 			let x: number = point1.X;
